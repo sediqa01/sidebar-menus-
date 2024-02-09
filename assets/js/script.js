@@ -5,11 +5,14 @@ for (var eachMenu of submenu) {
     
 }
 
-var menuLinks = document.querySelectorAll('.menuLink');
+var menuLinks = document.querySelectorAll('.menulink');
 
-for (let i = 0; i < menuLinks.length; i++) {
+for (var i = 0; i < menuLinks.length; i++) {
     menuLinks[i].addEventListener('click', function(event){
         event.preventDefault();
-    })
+
+        var thisMenu = this.parentNode.querySelector('ul');
+        console.log(thisMenu.innerHTML);
+    });
     
 }

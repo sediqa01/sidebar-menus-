@@ -1,18 +1,28 @@
-var submenu = document.querySelectorAll('ul li ul');
+const submenu = document.querySelectorAll('ul li ul');
 
-for (var eachMenu of submenu) {
-    eachMenu.className = 'hide-menu';
-    
+function hideMenus() {
+    for (let eachMenu of submenu) {
+        eachMenu.className = 'hide-menu';
+        
+    }
 }
+hideMenus();
 
-var menuLinks = document.querySelectorAll('.menulink');
+const menuLinks = document.querySelectorAll('.menulink');
 
-for (var i = 0; i < menuLinks.length; i++) {
+for (let i = 0; i < menuLinks.length; i++) {
     menuLinks[i].addEventListener('click', function(event){
         event.preventDefault();
 
-        var thisMenu = this.parentNode.querySelector('ul');
-        thisMenu.className = 'show-menu'
+        const thisMenu = this.parentNode.querySelector('ul');
+
+        if (thisMenu.classList.contains('hide-menu')) {
+            hideMenus();
+            thisMenu.className = 'show-menu';
+
+        } else{
+            thisMenu.className = 'hide-menu';
+        }
     });
     
 }

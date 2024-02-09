@@ -12,7 +12,7 @@ for (var i = 0; i < menuLinks.length; i++) {
         event.preventDefault();
 
         var thisMenu = this.parentNode.querySelector('ul');
-        console.log(thisMenu.innerHTML);
+        thisMenu.className = 'show-menu'
     });
     
 }
